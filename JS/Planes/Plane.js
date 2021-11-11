@@ -5,6 +5,7 @@ class Plane {
         this.maxFlightDistance = maxFlightDistance;
         this.maxLoadCapacity = maxLoadCapacity;
     }
+
     getMS() {
         return this.maxSpeed;
     }

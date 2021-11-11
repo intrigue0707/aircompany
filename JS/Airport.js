@@ -5,18 +5,19 @@ const ExperimentalPlane = require('./Planes/ExperimentalPlane');
 
 class Airport {
 
-     getPassengerPlane() {
-         let passengerPlane = [];
-         for (const p of passengerPlane) {
+    getPassengerPlane() {
+        let passengerPlane = [];
+        for (const p of passengerPlane) {
             if (p instanceof PassengerPlane) {
-                passengerPlane.push(p);}
+                passengerPlane.push(p);
+            }
         }
         return passengerPlane;
     }
 
     getMilitaryPlanes() {
         const militaryPlanes = [];
-        for(const el of militaryPlanes){
+        for (const el of militaryPlanes) {
             if (el instanceof MilitaryPlane) {
                 militaryPlanes.push(el);
             }
@@ -25,8 +26,8 @@ class Airport {
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
-        let passengerPlanes = this.getPassengerPlane();
-        let planeWithMaxCapacity = passengerPlanes[0];
+        let passengerPlanes = this.getPassengerPlane(),
+            planeWithMaxCapacity = passengerPlanes[0];
         for (const elem of passengerPlanes) {
             if (elem.getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
                 planeWithMaxCapacity = elem;
@@ -35,22 +36,20 @@ class Airport {
         return planeWithMaxCapacity;
     }
 
-
-    getTransportMilitaryPlanes(){
-        const transportMilitaryPlanes = [];
-        const militaryPlanes = this.getMilitaryPlanes();
+    getTransportMilitaryPlanes() {
+        const transportMilitaryPlanes = [],
+            militaryPlanes = this.getMilitaryPlanes();
         for (const elem of militaryPlanes) {
-        if (elem.getMilitaryType() === MilitaryType.TYPE_TRANSPORT) {
-        transportMilitaryPlanes.push(elem);
-        }
+            if (elem.getMilitaryType() === MilitaryType.TYPE_TRANSPORT) {
+                transportMilitaryPlanes.push(elem);
+            }
         }
         return transportMilitaryPlanes;
     }
 
-    getBomberMilitaryPlanes()
-    {
-        const bomberMilitaryPlanes = [];
-        const militaryPlanes = this.getMilitaryPlanes();
+    getBomberMilitaryPlanes() {
+        const bomberMilitaryPlanes = [],
+            militaryPlanes = this.getMilitaryPlanes();
         for (const item of militaryPlanes) {
             if (item.getMilitaryType() === MilitaryType.TYPE_BOMBER) {
                 bomberMilitaryPlanes.push(item);
@@ -65,7 +64,7 @@ class Airport {
 
     getExperimentalPlanes() {
         const experimentalPlanes = [];
-        for(const el of experimentalPlanes){
+        for (const el of experimentalPlanes) {
             if (el instanceof ExperimentalPlane) {
                 experimentalPlanes.push(el);
             }
