@@ -5,11 +5,11 @@ const MilitaryType = require('../models/MilitaryType');
 const ClassificationLevel = require('../models/ClassificationLevel');
 const planes = require('../Index');
 
-describe('There should be clear description of test', () => {
+describe('Airport tests decription', () => {
 
     let planeWithMaxPassengerCapacity = new PassengerPlane('Boeing-747', 980, 16100, 70500, 242);
 
-    it('should have military planes with transport type', () => {
+    it('check military planes has transport type', () => {
         let airport = new Airport(planes),
             transportMilitaryPlanes = airport.getTransportMilitaryPlanes(),
             flag = false;
