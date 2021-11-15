@@ -1,6 +1,6 @@
 const Plane = require('./Plane');
 
-class MyPlane  extends Plane {
+class MyPlane extends Plane {
 
     constructor(model, maxSpeed, maxFlightDistance, maxLoadCapacity) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
@@ -8,4 +8,4 @@ class MyPlane  extends Plane {
     }
 }
 
-//TODO implement it later
+module.exports = MyPlane;
